@@ -1,0 +1,86 @@
+$screen-es-down: 480px;
+$screen-xs-down: 575px;
+$screen-sm-down: 767px;
+$screen-md-down: 1024px;
+$screen-lg-down: 1279px;
+
+$screen-xs-up: 576px;
+$screen-sm-up: 768px;
+$screen-md-up: 1025px;
+$screen-lg-up: 1280px;
+
+// Desktop First
+@mixin lg-down {
+  @media only screen and (max-width: $screen-lg-down) {
+    @content
+  }
+}
+
+@mixin md-down {
+  @media only screen and (max-width: $screen-md-down) {
+    @content
+  }
+}
+
+@mixin sm-down {
+  @media only screen and (max-width: $screen-sm-down) {
+    @content
+  }
+}
+
+@mixin xs-down {
+  @media only screen and (max-width: $screen-xs-down) {
+    @content
+  }
+}
+
+@mixin es-down {
+  @media only screen and (max-width: $screen-es-down) {
+    @content
+  }
+}
+
+// Mobile First
+@mixin xs-up {
+  @media only screen and (min-width: $screen-xs-up) {
+    @content
+  }
+}
+
+@mixin sm-up {
+  @media only screen and (min-width: $screen-sm-up) {
+    @content
+  }
+}
+
+@mixin md-up {
+  @media only screen and (min-width: $screen-md-up) {
+    @content
+  }
+}
+
+@mixin lg-up {
+  @media only screen and (min-width: $screen-lg-up) {
+    @content
+  }
+}
+
+@mixin sm-md {
+  @media (min-width: $screen-sm-up) and (max-width: $screen-md-down) {
+    @content
+  }
+}
+
+@mixin retina {
+  @media only screen and (min-device-pixel-ratio: 2) {
+    @content
+  }
+
+  @media only screen and (min-resolution: 192dpi) {
+    @content
+  }
+
+  @media only screen and (min-resolution: 2dppx) {
+    @content
+  }
+}

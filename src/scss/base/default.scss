@@ -1,0 +1,152 @@
+/* Settings for site */
+* {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  font-family: $base-font;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100%;
+  min-width: 320px;
+  width: 100%;
+  color: $base-color;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.03em;
+  background: #161925;
+  footer {
+    margin-top: auto;
+  }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    cursor: pointer;
+  }
+}
+
+section, header, footer, main {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+video {
+  pointer-events: none;
+}
+
+button, input, textarea {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  overflow-y: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.svg-sprite {
+  display: none;
+}
+
+.icon {
+  max-width: 100%;
+  max-height: 100%;
+  &-arrow {
+    color: transparent;
+  }
+}
+
+.logo {
+  color: $secondary-color;
+  font-size: 1.285rem;
+  font-weight: 600;
+  letter-spacing: 0.178rem;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+}
+
+.input {
+  width: 100%;
+  color: $base-color;
+  &::placeholder {
+    color: $base-color;
+  }
+  &_default {
+    padding: 10px;
+    background-color: #1D202C;
+    border-radius: 5px;
+  }
+}
+
+.form {
+  &-search {
+    position: relative;
+    .form {
+      &__field {
+        width: 285px;
+        height: 40px;
+        .input {
+          padding-left: 50px;
+        }
+      }
+      &__action {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-55%);
+        width: 16px;
+        height: 16px;
+        button {
+          width: 100%;
+          height: 100%;
+          .icon {
+            color: $base-color;
+          }
+        }
+      }
+    }
+  }
+}
