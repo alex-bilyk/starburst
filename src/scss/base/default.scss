@@ -105,7 +105,23 @@ svg {
 }
 
 .btn {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear;
+  &_default {
+    padding: 13px 21px;
+    color: $secondary-color;
+    font-size: 0.858rem;
+    font-weight: 700;
+    background: $info-color;
+    border-radius: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    &:hover {
+      background: darken($info-color, 3%);
+    }
+  }
 }
 
 .input {
@@ -116,8 +132,29 @@ svg {
   }
   &_default {
     padding: 10px;
-    background-color: #1D202C;
+    background-color: $bg-color;
     border-radius: 5px;
+  }
+}
+
+.range_default.ui-slider {
+  margin-top: 15px;
+  width: 100%;
+  height: 5px;
+  background-color: #303645;
+  border: none;
+  border-radius: 2.5px;
+  .ui-slider-range {
+    background: $info-color;
+  }
+  .ui-slider-handle {
+    top: 2px;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    background-color: $secondary-color;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    border-radius: 100%;
   }
 }
 
@@ -147,6 +184,55 @@ svg {
           }
         }
       }
+    }
+  }
+}
+
+.text_effect {
+  color: $effect-color;
+  font-weight: 800;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  flex-wrap: nowrap;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider_main-wrapper {
+  position: relative;
+  .slider__arrow_main {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+    &-prev {
+      left: 0;
+      transform: translateY(-50%) rotate(90deg);
+    }
+    &-next {
+      right: 0;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+    .icon {
+      width: 100%;
+      height: 100%;
+      stroke: $secondary-color;
+    }
+  }
+  .swiper-button-disabled {
+    .icon {
+      stroke: $base-color;
     }
   }
 }
