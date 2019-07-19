@@ -7,9 +7,10 @@
 
 /* libs */
 @import '~swiper/dist/css/swiper.css';
-@import "~slick-carousel/slick/slick";
+@import "~jquery-ui-slider/jquery-ui.css";
 
 /* Additional files from components */
+@import 'components/_cards.scss';
 
 /* Additional files from parts */
 @import 'parts/header.scss';

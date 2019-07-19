@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -43,12 +42,6 @@ const config = {
   },
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        use: [
-          'vue-loader'
-        ]
-      },
       {
         test: /\.(sass|scss)$/,
         include: path.resolve(__dirname, "src/scss"),
@@ -102,7 +95,6 @@ const config = {
     ]
   },
   plugins: [
-    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: "./css/style.bundle.css"
     }),
